@@ -1,0 +1,24 @@
+{
+  "name": "weather-journal",
+  "version": "1.0.0",
+  "description": "Weather Journal App with Asynchronous JavaScript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liberty-mugwara/weather-journal-app.git"
+  },
+  "keywords": [
+    "weather",
+    "journal"
+  ],
+  "author": "Liberty Mugwara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liberty-mugwara/weather-journal-app/issues"
+  },
+  "homepage": "https://github.com/liberty-mugwara/weather-journal-app#readme"
+}
