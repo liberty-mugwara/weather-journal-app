@@ -11,6 +11,20 @@ let fetchedFromApi = false;
 
 getProjectData();
 
+/* ________ utils ________ */
+
+/**
+ *
+ * @param {number} number
+ * @param {string} unit
+ * @returns {string}
+ */
+const toLocaleString = (number, unit) => {
+  const a = number.toLocaleString(undefined, { style: "unit", unit });
+  console.log(a);
+  return a;
+};
+
 /* ________ functions ________ */
 
 /**
@@ -87,7 +101,11 @@ const updateEntry = (entryElements, data) => {
     dateEl.innerHTML = `<strong>Date:</strong> <span class="entry-data">${date}</span>`;
   }
   if (tempEl) {
-    tempEl.innerHTML = `<strong>Temperature:</strong> <span class="entry-data">${temp}</span>`;
+    tempEl.innerHTML = `<strong>Temperature:</strong> <span class="entry-data">${toLocaleString(
+      temp,
+      "celsius"
+    )}</span>
+    `;
   }
   if (contentHeadingEl) {
     contentHeadingEl.textContent = "Content";
@@ -95,8 +113,16 @@ const updateEntry = (entryElements, data) => {
   if (contentDataEl) {
     contentDataEl.innerHTML = `
     <p><strong>Weather:</strong> <span class="entry-data">${weather}</span></p>
-    <p><strong>Wind speed:</strong> <span class="entry-data">${wind.speed}</span></p>
-    <p><strong>Humidity:</strong> <span class="entry-data">${humidity}</span></p>
+    <p><strong>Wind speed:</strong> <span class="entry-data">${toLocaleString(
+      wind.speed,
+      "kilometer-per-hour"
+    )}</span></p>
+    <p><strong>Humidity:</strong> <span class="entry-data">${(
+      humidity / 100
+    ).toLocaleString(undefined, {
+      style: "percent",
+      minimumFractionDigits: 2,
+    })}</span></p>
     `;
   }
 };
@@ -123,9 +149,10 @@ const updateHistory = (projectData = []) => {
           <strong>Date:</strong> <span class="entry-data">${data.date}</span>
         </div>
         <div class="temp">
-          <strong>Temperature:</strong> <span class="entry-data">${
-            data.temp
-          }</span>
+          <strong>Temperature:</strong> <span class="entry-data">${toLocaleString(
+            data.temp,
+            "celsius"
+          )}</span>
         </div>
         <div class="content">
           <h3 class="content-heading">Content</h3>
@@ -136,14 +163,18 @@ const updateHistory = (projectData = []) => {
               }</span>
             </p>
             <p>
-              <strong>Wind speed:</strong> <span class="entry-data">${
-                data.wind.speed
-              }</span>
+              <strong>Wind speed:</strong> <span class="entry-data">${toLocaleString(
+                data.wind.speed,
+                "kilometer-per-hour"
+              )}</span>
             </p>
             <p>
-              <strong>Humidity:</strong> <span class="entry-data">${
-                data.humidity
-              }</span>
+              <strong>Humidity:</strong> <span class="entry-data">${(
+                data.humidity / 100
+              ).toLocaleString(undefined, {
+                style: "percent",
+                minimumFractionDigits: 2,
+              })}</span>
             </p>
           </div>
         </div>
