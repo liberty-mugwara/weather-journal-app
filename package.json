@@ -1,25 +1,26 @@
 {
-  "name": "travel-app",
+  "name": "weather-journal",
   "version": "1.0.0",
-  "description": "Obtains a desired trip location & date from the user, and displays weather and an image of the location using information obtained from external APIs.",
-  "main": "src/server/index.js",
+  "description": "Weather Journal App with Asynchronous JavaScript",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server/index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liberty-mugwara/travel-app.git"
+    "url": "git+https://github.com/liberty-mugwara/weather-journal-app.git"
   },
   "keywords": [
-    "travel"
+    "weather",
+    "journal"
   ],
   "author": "Liberty Mugwara",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liberty-mugwara/travel-app/issues"
+    "url": "https://github.com/liberty-mugwara/weather-journal-app/issues"
   },
-  "homepage": "https://github.com/liberty-mugwara/travel-app#readme",
+  "homepage": "https://github.com/liberty-mugwara/weather-journal-app#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"

@@ -1,9 +1,10 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 // No need to add the body-parser package I am using express > 4.16.0
 
 const app = express();
-app.use(express.static("src/client"));
+app.use(express.static(path.join(__dirname, "/website")));
 app.use(cors());
 
 // Please don't punish me here
